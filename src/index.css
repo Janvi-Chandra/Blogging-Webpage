@@ -120,6 +120,7 @@ h2 {
   font-size: 12px;
   padding: 10px 22px;
   transition: transform 0.3s ease;
+  margin-top: 0.8rem;
 }
 
 .deleteButton:hover {
@@ -207,8 +208,6 @@ select {
   margin-bottom: 0.8rem;
 }
 
-/* Controls */
-
 .controls {
   display: flex;
   justify-content: space-between;
@@ -239,13 +238,12 @@ select {
   text-align: right;
 }
 
-/* Pagination */
-
 .pagination {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .pagination-button {
