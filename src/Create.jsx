@@ -3,7 +3,7 @@ import { useState } from "react";
 const Create = ({ onAddBlog }) => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
-    const [author, setAuthor] = useState('Michael');
+    const [author, setAuthor] = useState('Your Name');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -11,7 +11,7 @@ const Create = ({ onAddBlog }) => {
         onAddBlog(blog);
         setTitle('');
         setBody('');
-        setAuthor('Michael');
+        setAuthor('Your Name');
     }
 
     return ( 
@@ -32,12 +32,12 @@ const Create = ({ onAddBlog }) => {
                     onChange={(e) => setBody(e.target.value)}> 
                 </textarea>
                 <label>Blog Author:</label>
-                <select value={author}
-                    onChange={(e) => setAuthor(e.target.value)}>
-                    <option value="Emily">Emily</option>
-                    <option value="Michael">Michael</option>
-                    <option value="Sarah">Sarah</option>
-                </select>
+                <input
+                    type="text" placeholder="Enter author's name"
+                    required
+                    value={author}
+                    onChange={(e) => setAuthor(e.target.value)}
+                />
                 <button className="AddBlog">Add Blog!</button>
             </form>
         </div>

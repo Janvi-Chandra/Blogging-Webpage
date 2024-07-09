@@ -49,18 +49,21 @@ const Home = ({ blogs, loading, setBlogs }) => {
           <option value="date">Date</option>
         </select>
       </div>
-      <div className="pagination">
-        <button onClick={() => setPage(page > 0 ? page - 1 : 0)} className="pagination-button">Previous</button>
-        <span>Page {page + 1}</span>
-        <button onClick={() => setPage(page < Math.ceil(filteredBlogs.length / itemsPerPage) - 1 ? page + 1 : page)} className="pagination-button">Next</button>
-      </div>
+      
       {loading ? (
         <div className="loading-message">
           <ClipLoader size={50} color={"#f1356d"} />
         </div>
       ) : (
         <BlogList blogs={paginatedBlogs} title="All Blogs" handleDelete={handleDelete} />
+        
       )}
+
+        <div className="pagination">
+        <button onClick={() => setPage(page > 0 ? page - 1 : 0)} className="pagination-button">Previous</button>
+        <span>Page {page + 1}</span>
+        <button onClick={() => setPage(page < Math.ceil(filteredBlogs.length / itemsPerPage) - 1 ? page + 1 : page)} className="pagination-button">Next</button>
+      </div>
     </div>
   );
 };
