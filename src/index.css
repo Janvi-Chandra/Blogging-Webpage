@@ -1,13 +1,265 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Quicksand";
+  color: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.navbar h1 {
+  color: #f1356d;
+}
+
+h2 {
+  color: #f1356d;
+}
+
+.blog-list h2 {
+  color: #f1356d;
+}
+
+.navbar .links {
+  margin-left: auto;
+}
+
+.navbar a {
+  margin-left: 1.2rem;
+  text-decoration: none;
+  padding: 0.4rem;
+}
+
+.navbar a:hover {
+  color: #f1356d;
+}
+
+#createBlog {
+  color: #f1356d;
+  font-weight: 600;
+  background-color: transparent;
+  border-radius: 25px;
+  border: 2px solid #f1356d;
+  font-size: 12px;
+  padding: 10px 22px;
+  transition: transform 0.3s ease;
+}
+
+#createBlog:hover {
+  transform: translateY(-10px);
+  background-color: #f1356d;
+  color: white;
+}
+
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Blog */
+
+.blog-preview {
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  border-bottom: 1px solid #fafafa;
+  border: 3px solid #f1356d;
+  border-radius: 10px;
+}
+
+.blog-flex {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.blog-flex img {
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.blog-preview a {
+  text-decoration: none;
+}
+
+.blog-preview:hover {
+  box-shadow: 1px 3px 5px rgba(202, 68, 97, 0.3);
+}
+
+.blog-preview h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 0.7rem;
+}
+
+.author {
+  font-size: 12px;
+  color: #5755559f;
+  margin-top: 0.4rem;
+  text-align: right;
+}
+
+.blog-preview p {
+  font-size: 14px;
+}
+
+.deleteButton {
+  color: #f1356d;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: transparent;
+  border-radius: 25px;
+  border: 2px solid #f1356d;
+  font-size: 12px;
+  padding: 10px 22px;
+  transition: transform 0.3s ease;
+}
+
+.deleteButton:hover {
+  transform: translateY(-3px);
+  background-color: #f1356d;
+  color: white;
+}
+
+/* Loading Message */
+
+.loading-message {
+  font-size: 2rem;
+  color: #f1356d;
+  text-align: center;
+  margin-top: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+input {
+  margin-bottom: 0.6rem;
+  height: 30px;
+  border-radius: 5px;
+  border-style: none;
+  border: 1.5px solid #f1356d;
+  padding: 0 0.4rem;
+}
+
+textarea {
+  margin-bottom: 0.6rem;
+  height: 50px;
+  border-radius: 5px;
+  border-style: none;
+  border: 1.5px solid #f1356d;
+  padding: 0 0.4rem;
+}
+
+select {
+  margin-bottom: 0.5rem;
+  height: 30px;
+  border-radius: 5px;
+  border-style: none;
+  border: 1.5px solid #f1356d;
+  padding: 0 0.4rem;
+  cursor: pointer;
+}
+
+.AddBlog {
+  background-color: transparent;
+  border-style: none;
+  border: 2px solid #f1356d;
+  padding: 0.3rem 0.6rem;
+  margin-top: 1rem;
+  border-radius: 35px;
+  color: #f1356d;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 25%;
+  align-self: center;
+  font-size: 12px;
+}
+
+.AddBlog:hover {
+  background-color: #f1356d;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.create h2 {
+  margin-bottom: 0.8rem;
+}
+
+/* Controls */
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-bar {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1.5px solid #f1356d;
+}
+
+.sort-dropdown {
+  padding: 0.2rem;
+  border-radius: 5px;
+  border: 1.5px solid #f1356d;
+}
+
+.post-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date {
+  font-size: 12px;
+  color: #5755559f;
+  text-align: right;
+}
+
+/* Pagination */
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.pagination-button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1.5px solid #f1356d;
+  background-color: transparent;
+  color: #f1356d;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.pagination-button:hover {
+  background-color: #f1356d;
+  color: white;
+  transform: translateY(-3px);
 }
